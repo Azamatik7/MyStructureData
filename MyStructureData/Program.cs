@@ -25,7 +25,7 @@
         {
             get
             {
-                if (index < 0 || index >= massive.Length)
+                if (index < 0 || index >= Count)
                 {
                     throw new IndexOutOfRangeException();
                 }
@@ -33,7 +33,7 @@
             }
             set
             {
-                if (index < 0 || index >= massive.Length)
+                if (index < 0 || index >= Count)
                 {
                     throw new IndexOutOfRangeException();
                 }
@@ -81,7 +81,7 @@
             Count++;
 
         }
-        
+
         public void Remove(int item)
         {
             for (int i = 0; i < massive.Length; i++)
@@ -96,26 +96,22 @@
         }
         public void RemoveAt(int index)
         {
-            if (index < 0 || index >= massive.Length)
+            if (index < 0 || index >= Count)
             {
                 throw new IndexOutOfRangeException();
             }
-            for (int i = 0; i < massive.Length; i++)
-            {
-                if (i == index)
-                {
-                    for (int j = i; j < massive.Length - 1; j++)
-                    {
-                        massive[j] = massive[j + 1];
 
-                    }
-                    Count--;
-                }
+            for (int j = index; j < Count - 1; j++)
+            {
+                massive[j] = massive[j + 1];
+
             }
+            Count--;
+
         }
         public void AddRange(int[] values)
         {
-            if (Count + values.Length > massive.Length)
+            while (Count + values.Length > massive.Length)
             {
                 int[] newMassive = new int[massive.Length * 2];
                 for (int i = 0; i < massive.Length; i++)
@@ -129,7 +125,7 @@
                 Add(values[i]);
             }
         }
-        
+
         public void Clear()
         {
             Count = 0;
