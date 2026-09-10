@@ -62,7 +62,7 @@
             {
                 throw new IndexOutOfRangeException();
             }
-            if (massive.Length < Count + 1)
+            if (massive.Length == Count)
             {
                 int[] newMassive = new int[massive.Length * 2];
                 for (int i = 0; i < massive.Length; i++)
@@ -88,12 +88,8 @@
             {
                 if (massive[i] == item)
                 {
-                    for (int j = i; j < massive.Length - 1; j++)
-                    {
-                        massive[j] = massive[j + 1];
-
-                    }
-                    Count--;
+                    RemoveAt(i);
+                    return;
                 }
 
             }
@@ -128,11 +124,10 @@
                 }
                 massive = newMassive;
             }
-            for (int i = Count; i < Count+values.Length; i++)
+            for (int i = 0; i < values.Length; i++)
             {
-                massive[i] = values[i-Count];
+                Add(values[i]);
             }
-            Count += values.Length;
         }
         
         public void Clear()
