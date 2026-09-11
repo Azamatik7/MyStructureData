@@ -19,7 +19,7 @@
     }
     class MyList
     {
-        public int[] massive { get; set; } = new int[4];
+        private int[] massive { get; set; } = new int[4];
         public int Count { get; private set; } = 0;
         public int this[int index]
         {
@@ -46,12 +46,7 @@
 
             if (Count == massive.Length)
             {
-                int[] newMassive = new int[massive.Length * 2];
-                for (int i = 0; i < massive.Length; i++)
-                {
-                    newMassive[i] = massive[i];
-                }
-                massive = newMassive;
+                Resize();
             }
             massive[Count] = value;
             Count++;
@@ -64,12 +59,7 @@
             }
             if (massive.Length == Count)
             {
-                int[] newMassive = new int[massive.Length * 2];
-                for (int i = 0; i < massive.Length; i++)
-                {
-                    newMassive[i] = massive[i];
-                }
-                massive = newMassive;
+                Resize();
             }
 
             for (int j = Count - 1; j >= index; j--)
@@ -84,7 +74,7 @@
 
         public void Remove(int item)
         {
-            for (int i = 0; i < massive.Length; i++)
+            for (int i = 0; i < Count; i++)
             {
                 if (massive[i] == item)
                 {
@@ -111,15 +101,6 @@
         }
         public void AddRange(int[] values)
         {
-            while (Count + values.Length > massive.Length)
-            {
-                int[] newMassive = new int[massive.Length * 2];
-                for (int i = 0; i < massive.Length; i++)
-                {
-                    newMassive[i] = massive[i];
-                }
-                massive = newMassive;
-            }
             for (int i = 0; i < values.Length; i++)
             {
                 Add(values[i]);
@@ -129,6 +110,19 @@
         public void Clear()
         {
             Count = 0;
+        }
+        private void Resize()
+        {
+            int newSize = massive.Length == 0 ? 4 : massive.Length * 2;
+
+            int[] newMassive = new int[newSize];
+
+            for (int i = 0; i < massive.Length; i++)
+            {
+                newMassive[i] = massive[i];
+            }
+
+            massive = newMassive;
         }
     }
 }
