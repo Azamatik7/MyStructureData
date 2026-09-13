@@ -17,6 +17,9 @@
             }
         }
     }
+
+
+
     class MyList
     {
         private int[] massive { get; set; } = new int[4];
@@ -123,6 +126,55 @@
             }
 
             massive = newMassive;
+        }
+    }
+    class MyLinkedList
+    {
+        private Node _head;
+
+        public void AddFirst(Node newNode)
+        {
+            _head = newNode;
+            newNode.Next = _head;
+        }
+        public void DeleteFirst()
+        {
+            if (_head == null)
+                return;
+            _head = _head.Next;
+        }
+        public void AddLast(Node newNode)
+        {
+            if (_head == null)
+            {
+                _head = newNode;
+                return;
+            }
+            Node current = _head;
+            while(current.Next != null)
+            {
+                current = current.Next;
+            }
+            current.Next = newNode;
+        }
+        public void RemoveLast()
+        {
+            if (_head == null)
+                return;
+            Node current = _head;
+            while (current.Next != null)
+            {
+                current = current.Next;
+            }
+        }
+    }
+    class Node
+    {
+        public Node Next;
+        public int Value;
+        public Node(int value)
+        {
+            Value = value;
         }
     }
 }
