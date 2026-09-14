@@ -4,19 +4,31 @@
     {
         static void Main(string[] args)
         {
-            MyList myList = new MyList();
-            int[] ints = new int[] { 99, 89, 79 };
-            myList.Add(1);
-            myList.Add(2);
-            myList.Add(3);
-            myList.Add(4);
-            myList.AddRange(ints);
-            for (int i = 0; i < myList.Count; i++)
-            {
-                Console.Write(myList[i] + " ");
-            }
+            //MyList myList = new MyList();
+            //int[] ints = new int[] { 99, 89, 79 };
+            //myList.Add(1);
+            //myList.Add(2);
+            //myList.Add(3);
+            //myList.Add(4);
+            //myList.AddRange(ints);
+            //for (int i = 0; i < myList.Count; i++)
+            //{
+            //    Console.Write(myList[i] + " ");
+            //}
+
+            MyLinkedList myLinkedList = new MyLinkedList();
+            myLinkedList.AddFirst(new Node(1));
+            myLinkedList.AddFirst(new Node(2));
+            myLinkedList.AddFirst(new Node(3));
+            myLinkedList.Print();
+            myLinkedList.RemoveBy(3);
+            myLinkedList.Print();
+
         }
+
+
     }
+
 
 
 
@@ -128,16 +140,18 @@
             massive = newMassive;
         }
     }
+
+
     class MyLinkedList
     {
         private Node _head;
 
         public void AddFirst(Node newNode)
         {
-            _head = newNode;
             newNode.Next = _head;
+            _head = newNode;
         }
-        public void DeleteFirst()
+        public void RemoveFirst()
         {
             if (_head == null)
                 return;
@@ -161,17 +175,60 @@
         {
             if (_head == null)
                 return;
-            Node current = _head;
-            while (current.Next != null)
+            if (_head.Next == null)
             {
+                _head = null;
+            }
+            else
+            {
+                Node current = _head;
+                Node prev = null;
+                while (current.Next != null)
+                {
+                    prev = current;
+                    current = current.Next;
+                }
+                prev.Next = null;
+            }
+        }
+        public void RemoveBy(int value)
+        {
+            if (_head == null)
+                return;
+            Node current = _head;
+            Node prev = null;
+            if (current.Value == value)
+            {
+                _head = current.Next;
+                return;
+            }
+
+            while (current.Next != null && current.Value != value)
+            {
+                prev = current;
                 current = current.Next;
             }
+            if (current.Value != value)
+                return;
+            prev.Next = current.Next;
+
+        }
+        public void Print()
+        {
+            Node current = _head;
+            while (current != null)
+            {
+                Console.Write(current.Value + " ");
+                current = current.Next;
+            }
+            Console.WriteLine();
         }
     }
     class Node
     {
         public Node Next;
         public int Value;
+        
         public Node(int value)
         {
             Value = value;
