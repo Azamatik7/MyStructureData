@@ -1,16 +1,26 @@
-﻿namespace MyLinkedList
+﻿
+using System.Xml.Linq;
+
+namespace MyLinkedListWithTail
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            MyLinkedListWithTail link = new MyLinkedListWithTail();
+            link.AddFirst(new Node(1));
+            link.AddFirst(new Node(2));
+            link.AddFirst(new Node(2));
+            Console.WriteLine(link.Print());
+
+
         }
-         class MyLinkedList
+        class MyLinkedListWithTail
         {
             private Node _head;
+            private Node _tail;
 
-            public void AddFirst(Node newNode)
+            public  void AddFirst(Node newNode)
             {
                 newNode.Next = _head;
                 _head = newNode;
@@ -28,12 +38,8 @@
                     _head = newNode;
                     return;
                 }
-                Node current = _head;
-                while (current.Next != null)
-                {
-                    current = current.Next;
-                }
-                current.Next = newNode;
+                _tail.Next = newNode;
+                _tail = newNode;
             }
             public void RemoveLast()
             {
@@ -53,29 +59,8 @@
                         current = current.Next;
                     }
                     prev.Next = null;
+                    _tail = prev;
                 }
-            }
-            public void RemoveBy(int value)
-            {
-                if (_head == null)
-                    return;
-                Node current = _head;
-                Node prev = null;
-                if (current.Value == value)
-                {
-                    _head = current.Next;
-                    return;
-                }
-
-                while (current.Next != null && current.Value != value)
-                {
-                    prev = current;
-                    current = current.Next;
-                }
-                if (current.Value != value)
-                    return;
-                prev.Next = current.Next;
-
             }
             public void Print()
             {
@@ -87,6 +72,7 @@
                 }
                 Console.WriteLine();
             }
+
         }
         class Node
         {
