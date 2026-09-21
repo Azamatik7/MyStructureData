@@ -1,26 +1,16 @@
-﻿
-using System.Xml.Linq;
-
-namespace MyLinkedListWithTail
+﻿namespace MyDoublyLinkedList
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            MyLinkedListWithTail link = new MyLinkedListWithTail();
-            link.AddFirst(new Node(1));
-            link.RemoveLast();
-            link.Print();
             
-
         }
-        class MyLinkedListWithTail
+        class MyDoublyLinkedList
         {
-            private Node _head;
-            private Node _tail;
-            
-
-            public  void AddFirst(Node newNode)
+            Node _head;
+            Node _tail;
+            public void AddFirst(Node newNode)
             {
                 if (_head == null)
                 {
@@ -30,9 +20,11 @@ namespace MyLinkedListWithTail
                 else
                 {
                     newNode.Next = _head;
+                    _head.Previous = newNode;
                     _head = newNode;
+
                 }
-                    
+
             }
             public void RemoveFirst()
             {
@@ -40,9 +32,12 @@ namespace MyLinkedListWithTail
                     return;
                 if (_head.Next == null)
                 {
+                    _head = null;
                     _tail = null;
+                    return;
                 }
                 _head = _head.Next;
+                _head.Previous = null;
             }
             public void AddLast(Node newNode)
             {
@@ -53,7 +48,9 @@ namespace MyLinkedListWithTail
                     return;
                 }
                 _tail.Next = newNode;
+                newNode.Previous = _tail;
                 _tail = newNode;
+                
             }
             public void RemoveLast()
             {
@@ -66,15 +63,9 @@ namespace MyLinkedListWithTail
                 }
                 else
                 {
-                    Node current = _head;
-                    Node prev = null;
-                    while (current.Next != null)
-                    {
-                        prev = current;
-                        current = current.Next;
-                    }
-                    prev.Next = null;
-                    _tail = prev;
+                    
+                    _tail = _tail.Previous;
+                    _tail.Next = null;
                 }
             }
             public void Print()
@@ -88,12 +79,13 @@ namespace MyLinkedListWithTail
                 Console.WriteLine($"tail {_tail.Value}");
 
             }
-
         }
+    }
         class Node
         {
             public Node Next;
             public int Value;
+            public Node Previous;
 
             public Node(int value)
             {

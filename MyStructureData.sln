@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLinkedList", "MyLinkedLis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLinkedListWithTail", "MyLinkedListWithTail\MyLinkedListWithTail.csproj", "{68443732-AEA0-4FD5-865D-76E00C503057}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDoublyLinkedList", "MyDoublyLinkedList\MyDoublyLinkedList.csproj", "{AFE3BBB7-382F-4F32-BC6A-8A22E72F482B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCyclicDoublyLinkedList", "MyCyclicDoublyLinkedList\MyCyclicDoublyLinkedList.csproj", "{EB2261AC-E392-453B-920A-38E8E6FB2B3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{68443732-AEA0-4FD5-865D-76E00C503057}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68443732-AEA0-4FD5-865D-76E00C503057}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68443732-AEA0-4FD5-865D-76E00C503057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFE3BBB7-382F-4F32-BC6A-8A22E72F482B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFE3BBB7-382F-4F32-BC6A-8A22E72F482B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFE3BBB7-382F-4F32-BC6A-8A22E72F482B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFE3BBB7-382F-4F32-BC6A-8A22E72F482B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB2261AC-E392-453B-920A-38E8E6FB2B3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB2261AC-E392-453B-920A-38E8E6FB2B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB2261AC-E392-453B-920A-38E8E6FB2B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB2261AC-E392-453B-920A-38E8E6FB2B3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
