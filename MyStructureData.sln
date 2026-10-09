@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36811.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStructureData", "MyStructureData\MyStructureData.csproj", "{123CD6D1-7770-4A08-B8B0-225C9E1AFB31}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDynamicArray", "MyStructureData\MyDynamicArray.csproj", "{123CD6D1-7770-4A08-B8B0-225C9E1AFB31}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLinkedList", "MyLinkedList\MyLinkedList.csproj", "{5498C385-51AE-4FF0-BF20-298F3992B6E1}"
 EndProject
@@ -20,6 +20,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyQueueByMassive", "MyQueueByMassive\MyQueueByMassive.csproj", "{4891FDD5-15AE-4013-8B2B-8955AF3FA646}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyQueueByLinkedList", "MyQueueByLinkedList\MyQueueByLinkedList.csproj", "{886A60FE-D2A1-42E9-AD26-A72AD5AB41A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsProject", "TestsProject\TestsProject.csproj", "{F7D9239B-B961-406F-98D9-5B5DA18A6D48}"
+	ProjectSection(ProjectDependencies) = postProject
+		{123CD6D1-7770-4A08-B8B0-225C9E1AFB31} = {123CD6D1-7770-4A08-B8B0-225C9E1AFB31}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +68,10 @@ Global
 		{886A60FE-D2A1-42E9-AD26-A72AD5AB41A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{886A60FE-D2A1-42E9-AD26-A72AD5AB41A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{886A60FE-D2A1-42E9-AD26-A72AD5AB41A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7D9239B-B961-406F-98D9-5B5DA18A6D48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7D9239B-B961-406F-98D9-5B5DA18A6D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7D9239B-B961-406F-98D9-5B5DA18A6D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7D9239B-B961-406F-98D9-5B5DA18A6D48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
