@@ -22,9 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyQueueByLinkedList", "MyQueueByLinkedList\MyQueueByLinkedList.csproj", "{886A60FE-D2A1-42E9-AD26-A72AD5AB41A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsProject", "TestsProject\TestsProject.csproj", "{F7D9239B-B961-406F-98D9-5B5DA18A6D48}"
-	ProjectSection(ProjectDependencies) = postProject
-		{123CD6D1-7770-4A08-B8B0-225C9E1AFB31} = {123CD6D1-7770-4A08-B8B0-225C9E1AFB31}
-	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dictionary", "Dictionary\Dictionary.csproj", "{008E3828-45B9-44ED-B713-C65C24089830}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,6 +71,10 @@ Global
 		{F7D9239B-B961-406F-98D9-5B5DA18A6D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7D9239B-B961-406F-98D9-5B5DA18A6D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7D9239B-B961-406F-98D9-5B5DA18A6D48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{008E3828-45B9-44ED-B713-C65C24089830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{008E3828-45B9-44ED-B713-C65C24089830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{008E3828-45B9-44ED-B713-C65C24089830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{008E3828-45B9-44ED-B713-C65C24089830}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
